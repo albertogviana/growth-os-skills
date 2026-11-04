@@ -63,6 +63,11 @@ Ler:
 - `git log --since="6 hours ago"` pra ver commits da sessão.
 - `git diff HEAD~5..HEAD --stat` pra ver arquivos modificados.
 - `MEMORY.md` (estado anterior).
+- 🔴 **ai-memory, se o MCP estiver disponível** (`mcp__ai-memory__*`). É o registro bruto da sessão, gravado pelos hooks, e sobrevive à compactação do contexto. A memória da conversa não sobrevive: depois de compactada, ela é só um resumo e perde comando, número e o porquê.
+  - `memory_recent` (limit 10): páginas recentes, inclusive a desta sessão se já houver.
+  - `memory_query` com os temas da sessão (tickets, PRs, deploys citados): conferir **cada afirmação** do daily e do Handoff contra o registro antes de escrever. Ex.: "foi aplicado em prod?", "qual versão subiu?", "o PR mergeou?".
+  - Afirmação que o registro não confirma: escrever "não verificado", nunca como fato.
+  - Se o MCP não existir, seguir sem ele e dizer no daily que a conferência não foi feita.
 
 Identificar:
 - Skills rodadas hoje.
